@@ -43,6 +43,7 @@ function searchCity(city) {
 
 function getForecast(city) {
   let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(forecastUrl);
   axios
     .get(forecastUrl)
     .then((response) => displayForecast(response))
@@ -72,7 +73,7 @@ function displayWeather(response) {
     "#icon"
   ).innerHTML = `<img src="${data.condition.icon_url}" class="weather-app-icon"/>`;
 
-  getForecast(response.data.city.name);
+  getForecast(response.data.city);
 
   let weatherContainer = document.querySelector(".weather-app-data");
   if (weatherContainer) {
@@ -80,19 +81,20 @@ function displayWeather(response) {
     void weatherContainer.offsetWidth;
     weatherContainer.classList.add("fade");
   }
+}
 
-  function displayForecast(response) {
-    let forecast = response.data.daily;
-    let forecastHTML = "";
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastHTML = "";
 
-    forecast.slice(1, 6).forEach((day) => {
-      forecastHTML += `
+  forecast.slice(1, 6).forEach((day) => {
+    forecastHTML += `
       <div class="daily-forecast">
         <div class="forecast-weekday">${formatDay(day.time)}</div>
         <div class="forecast-icon">
           <img src="${day.condition.icon_url}" alt="${
-        day.condition.description
-      }" />
+      day.condition.description
+    }" />
         </div>
         <div class="daily-temperatures">
   <span class="daily-temperature"><strong>${Math.round(
@@ -101,20 +103,20 @@ function displayWeather(response) {
   <span class="daily-temperature">${Math.round(day.temperature.minimum)}℃</span>
 </div>
 </div>`;
-    });
+  });
 
-    document.querySelector(".weather-forecast").innerHTML = forecastHTML;
-  }
-
-  // === Event Listener ===
-  document
-    .querySelector("#search-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-      let city = document.querySelector("#search-form-input").value;
-      searchCity(city);
-    });
-
-  // Load default city
-  searchCity("Perth");
+  document.querySelector(".weather-forecast").innerHTML = forecastHTML;
 }
+
+// === Event Listener ===
+document
+  .querySelector("#search-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    let city = document.querySelector("#search-form-input").value;
+    searchCity(city);
+  });
+
+// Load default city
+searchCity("Perth");
+// }
