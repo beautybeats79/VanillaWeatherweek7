@@ -20,9 +20,12 @@ body {
 }
 
 /* Search input */
-@media (max-width: 500px) .search-form {
-  flex-direction: column;
-  align-items: centre;
+@media (max-width: 500px) {
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .search-form-input {
@@ -72,7 +75,7 @@ body {
 }
 
 /* Details */
-.weather_app-details {
+.weather-app-details {
   font-size: 16px;
   color: #444;
   font-style: italic;
@@ -116,8 +119,6 @@ body {
 }
 
 .forecast-icon {
-  width: 30px;
-  height: 30px;
   margin-bottom: 5px;
   object-fit: contain;
   max-width: 80%;
