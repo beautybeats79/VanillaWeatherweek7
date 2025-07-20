@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Weather</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="weather-app">
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            required
+            class="search-form-input"
+            id="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+
+      <main>
+        <div class="weather-app-data fade" id="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city">Loading...</h1>
+            <p class="weather_app-details">
+              <span class="day-and-time" id="time"></span><br />
+              <span class="conditions">CONDITIONS: </span>
+              <span class="description" id="description"></span><br />
+              <span class="humidity">HUMIDITY: </span>
+              <span class="humidity-value" id="humidity"></span><br />
+              <span class="wind-speed">WIND SPEED: </span>
+              <span class="wind-speed-value" id="wind-speed"></span><br />
+            </p>
+          </div>
+
+          <div class="weather-app-temp-container">
+            <div id="icon">
+              <!-- Weather icon will be injected by JS -->
+            </div>
+            <div class="weather-app-temperature" id="temperature">--</div>
+          </div>
+        </div>
+
+        <!-- Dynamic forecast content will be inserted here -->
+        <div class="weather-forecast"></div>
+      </main>
+
+      <footer>
+        Coded by
+        <a href="https://github.com/beautybeats79" target="_blank"
+          >Linda Chant</a
+        >
+        and is open-sourced on
+        <a
+          href="https://github.com/beautybeats79/Vanilla-Weather"
+          target="_blank"
+          >GitHub</a
+        >
+        and
+        <a href="https://codingprojectweather.netlify.app" target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./src/index.js"></script>
+  </body>
+</html>
