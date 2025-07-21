@@ -68,12 +68,25 @@ body {
   margin: 10px 0;
 }
 
+.weather-app-temperature-container {
+  display: flex;
+  align-items: center;     /* centers vertically */
+  justify-content: center; /* centers horizontally */
+  gap: 8px;               
+  margin-top: 10px;
+}
+
 .weather-app-temperature {
-  font-size: 48px;
+  font-size: 88px;
   font-weight: bold;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
+  line-height: 1;
+}
+
+.weather-app-unit {
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 0;
+  align-self: flex-end; 
 }
 
 /* Details */
