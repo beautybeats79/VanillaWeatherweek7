@@ -12,7 +12,9 @@ body {
 .weather-app {
   max-width: 700px;
   margin: 40px auto;
-  background: #fefefe;
+  background: linear-gradient(to bottom right, #ffffff80, #e0d4fc80;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
   padding: 20px;
