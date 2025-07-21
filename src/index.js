@@ -63,9 +63,7 @@ function displayWeather(response) {
   document.querySelector("#wind-speed").textContent = `${Math.round(
     data.wind.speed
   )} km/h`;
-  document.querySelector("#temperature").textContent = `${Math.round(
-    data.temperature.current
-  )}℃`;
+  document.querySelector("#temperature").textContent = Math.round(data.temperature.current);
   document.querySelector("#time").textContent = formatDateTime(
     new Date(data.time * 1000)
   );
