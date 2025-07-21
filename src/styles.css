@@ -70,23 +70,25 @@ body {
 
 .weather-app-temperature-container {
   display: flex;
-  align-items: center;     /* centers vertically */
+  align-items: flex-start;
   justify-content: center; /* centers horizontally */
-  gap: 8px;               
+  gap: 6px;               
   margin-top: 10px;
+  flex-wrap: nowrap;
 }
 
 .weather-app-temperature {
   font-size: 88px;
   font-weight: bold;
   line-height: 1;
+  margin: 0;
 }
 
 .weather-app-unit {
   font-size: 32px;
   font-weight: 500;
-  margin-top: 0;
-  align-self: flex-end; 
+  margin-top: 18px;
+  line-height: 1;
 }
 
 /* Details */
