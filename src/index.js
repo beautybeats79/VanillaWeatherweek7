@@ -97,8 +97,8 @@ function displayForecast(response) {
         <div class="daily-temperatures">
   <span class="daily-temperature"><strong>${Math.round(
     day.temperature.maximum
-  )}℃</strong></span>
-  <span class="daily-temperature">${Math.round(day.temperature.minimum)}℃</span>
+  )}</strong></span>
+  <span class="daily-temperature">${Math.round(day.temperature.minimum)}</span>
 </div>
 </div>`;
   });
