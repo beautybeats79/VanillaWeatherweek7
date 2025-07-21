@@ -81,6 +81,28 @@ function displayWeather(response) {
   }
 }
 
+function applyTimeBasedBackground() {
+  const now = new Date();
+  const hour = now.getHours();
+  const body = document.body;
+
+  body.classList.remove("morning", "daytime", "evening", "night"); // clear previous
+
+  if (hour >= 5 && hour < 11) {
+    body.classList.add("morning");
+  } else if (hour >= 11 && hour < 17) {
+    body.classList.add("daytime");
+  } else if (hour >= 17 && hour < 20) {
+    body.classList.add("evening");
+  } else {
+    body.classList.add("night");
+  }
+}
+
+// Run on load
+applyTimeBasedBackground();
+
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastHTML = "";
