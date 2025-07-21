@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(circle at top left, #fcecff, #d4f1ef);
+  background: linear-gradient(to bottom right, #dcbdf6, #a6dcef));
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: #1f1f1f;
@@ -16,7 +16,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
+  box-shadow: box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
   padding: 20px;
   text-align: center;
 }
@@ -140,6 +140,24 @@ body {
   padding: 2px 6px;
   border-radius: 4px;
 }
+
+body.morning {
+  background: linear-gradient(to bottom right, #fff1c1, #ffecd2); /* soft sunrise */
+}
+
+body.daytime {
+  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* blue sky */
+}
+
+body.evening {
+  background: linear-gradient(to bottom right, #fbc2eb, #a6c1ee); /* pink twilight */
+}
+
+body.night {
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364); /* dark starry */
+  color: #f0f0f0;
+}
+
 
 /* Footer */
 footer {
