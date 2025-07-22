@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #dcbdf6, #a6dcef));
+  background: linear-gradient(to bottom right, #dcbdf6, #a6dcef);
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: #1f1f1f;
@@ -16,7 +16,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  box-shadow: box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
   padding: 20px;
   text-align: center;
 }
@@ -81,6 +81,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 4px;
+}
 
 .weather-app-temperature {
   font-size: 88px;
