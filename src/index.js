@@ -66,11 +66,17 @@ function displayWeather(response) {
   document.querySelector("#time").textContent = formatDateTime(
     new Date(data.time * 1000)
   );
-  const iconUrl = data.condition.icon_url.replace("http://", "https://");
-document.querySelector("#icon").innerHTML = `<img src="${iconUrl}" class="weather-app-icon" />`;
+  
+  let iconUrl = data.condition.icon_url;
+  if (iconUrl.startsWith("http://")) {
+    iconUrl = iconUrl.replace("http://", "https://");
+  }
 
-  getForecast(response.data.city);
+  document.querySelector("#icon").innerHTML = `<img src="${iconUrl}" class="weather-app-icon" alt="weather icon" />`;
 
+  // Call forecast
+  getForecast(data.city);
+  
   let weatherContainer = document.querySelector(".weather-app-data");
   if (weatherContainer) {
     weatherContainer.classList.remove("fade");
@@ -105,12 +111,18 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastHTML = "";
 
+  
+
   forecast.slice(1, 6).forEach((day) => {
+     let forecastIcon = day.condition.icon_url;
+    if (forecastIcon.startsWith("http://")) {
+      forecastIcon = forecastIcon.replace("http://", "https://");
+    }
     forecastHTML += `
-      <div class="daily-forecast">
+      <div class="forecast-day">
         <div class="forecast-weekday">${formatDay(day.time)}</div>
         <div class="forecast-icon">
-          <img src="${day.condition.icon_url.replace("http://", "https://")}" alt="${day.condition.description}" />
+          <img src="${forecastIcon}" alt="${day.condition.description}" />
         </div>
         <div class="daily-temperatures">
   <span class="daily-temperature"><strong>${Math.round(
