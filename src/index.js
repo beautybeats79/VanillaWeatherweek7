@@ -66,9 +66,8 @@ function displayWeather(response) {
   document.querySelector("#time").textContent = formatDateTime(
     new Date(data.time * 1000)
   );
-  document.querySelector(
-    "#icon"
-  ).innerHTML = `<img src="${data.condition.icon_url}" class="weather-app-icon"/>`;
+  const iconUrl = data.condition.icon_url.replace("http://", "https://");
+document.querySelector("#icon").innerHTML = `<img src="${iconUrl}" class="weather-app-icon" />`;
 
   getForecast(response.data.city);
 
@@ -111,9 +110,7 @@ function displayForecast(response) {
       <div class="daily-forecast">
         <div class="forecast-weekday">${formatDay(day.time)}</div>
         <div class="forecast-icon">
-          <img src="${day.condition.icon_url}" alt="${
-      day.condition.description
-    }" />
+          <img src="${day.condition.icon_url.replace("http://", "https://")}" alt="${day.condition.description}" />
         </div>
         <div class="daily-temperatures">
   <span class="daily-temperature"><strong>${Math.round(
