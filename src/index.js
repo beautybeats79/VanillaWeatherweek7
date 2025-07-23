@@ -142,7 +142,7 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     let city = document.querySelector("#search-form-input").value;
-    searchCity(city);
+    searchCity(city.value);
   });
 
 // == On Page Load ===
