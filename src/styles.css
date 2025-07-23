@@ -124,8 +124,8 @@ body {
 }
 
 .forecast-day {
-  flex: 1 1 18%;
-  max-width: 18%;
+  flex: 1 1 100px;
+  max-width: 120;
   display: flex;
   flex-direction: column;
   align-items: center;
