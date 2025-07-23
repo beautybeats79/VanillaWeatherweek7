@@ -147,4 +147,4 @@ document
 
 // Load default city
 searchCity("Perth");
-// }
+}
