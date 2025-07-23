@@ -145,6 +145,6 @@ document
     searchCity(city);
   });
 
-// Load default city
+// == On Page Load ===
+applyTimeBasedBackground();
 searchCity("Perth");
-}
